@@ -14,6 +14,19 @@
   --switch-bg-url: url("assets/moon-stars.svg");
 }
 
+html {
+  height: 100vh;
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
 .light {
   --text-color: black;
   --bg-url: url("assets/bg-mobile-light.jpg");
@@ -22,16 +35,6 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url("assets/sun.svg");
-}
-
-body * {
-  font-family: "Inter", sans-serif;
-  color: var(--text-color);
-}
-
-body {
-  /* background: color image repeat position/size */
-  background: var(--bg-url) no-repeat top center/cover;
 }
 
 #container {
@@ -155,4 +158,16 @@ footer {
 .disabled {
   pointer-events:none; /* This makes it not clickable */
   opacity:0.6; /*This grays it out to look disabled */
+}
+
+/* media queries */
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url('assets/bg-desktop.jpg');
+  }
+
+  .light {
+    --bg-url: url('assets/bg-desktop-light.jpg');
+  }
 }
